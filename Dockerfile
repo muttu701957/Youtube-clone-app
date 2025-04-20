@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:latest
+FROM node:20.17.0
 
 # Set the working directory in the container
 WORKDIR /app
@@ -14,7 +14,7 @@ ENV REACT_APP_RAPID_API_KEY=$REACT_APP_RAPID_API_KEY
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install
+RUN npm install -g npm@9.2.0
 
 # Copy the rest of the application code to the working directory
 COPY . .
